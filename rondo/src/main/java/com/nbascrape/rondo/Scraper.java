@@ -11,6 +11,7 @@ public class Scraper {
     void fetchThings(String url) {
     }
 
+    
     public static void main(String[] args) {
         final String url = "https://stats.nba.com/players/bio/?Season=2019-20&SeasonType=Regular%20Season&sort=PLAYER_NAME&dir=1";
 

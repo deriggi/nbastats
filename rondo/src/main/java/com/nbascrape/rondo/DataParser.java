@@ -15,7 +15,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 public class DataParser {
 
     public static void main(String[] args) {
-        String d = new DataParser().fileToString("../nba2.json");
+        String d = new DataParser().fileToString("nba2.json");
         ObjectMapper mapper = new ObjectMapper();
 
         try {
@@ -23,12 +23,8 @@ public class DataParser {
             JsonNode rowData = json.get("resultSets");
             JsonNode rowSet = rowData.get(0).get("rowSet");
             rowSet.forEach(DataParser::printRow);
-            
 
-            // Iterator<JsonNode> it = rowData.iterator();
-            // while (it.hasNext()) {
-            //     System.out.println(it.next().asText());
-            // }
+            
         } catch (JsonMappingException jme) {
             System.out.println("failed parsing");
         } catch (JsonProcessingException e) {
